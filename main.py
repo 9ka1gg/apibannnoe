@@ -4,7 +4,6 @@ import argparse
 from dotenv import load_dotenv
 from urllib.parse import urlparse
 
-load_dotenv()
 
 def shorten_link(vk_token, link):
     url = f'https://api.vk.ru/method/utils.getShortLink'
@@ -39,6 +38,8 @@ def is_shorten_link(vk_token, link):
 
 
 def main():
+    load_dotenv()
+
     parser = argparse.ArgumentParser(description='Программа для сокращения ссылок')
     parser.add_argument('--link', help='Обрабатываемая ссылка')
     args = parser.parse_args()
